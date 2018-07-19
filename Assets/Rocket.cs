@@ -23,13 +23,15 @@ public class Rocket : MonoBehaviour {
         if (Input.GetKey(KeyCode.Space))
         {
             rigidBody.AddRelativeForce(Vector3.up);
-            if (!audioSource.isPlaying) {     // so it doesn´t layer
+            if (!audioSource.isPlaying)      // so it doesn´t layer
+            {
                 audioSource.Play();
             }
-            else
-            {
-                audioSource.Stop();
-            }
+
+        }
+        else
+        {
+            audioSource.Stop();
         }
 
         if (Input.GetKey(KeyCode.A))
