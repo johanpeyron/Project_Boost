@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour
@@ -20,15 +20,15 @@ public class Rocket : MonoBehaviour
     enum State { Alive, Dying, Transcending }
     State state = State.Alive;
 
-    // Use this for initialization
-    void Start()
+	// Use this for initialization
+	void Start ()
     {
         rigidBody = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
-    }
-
-    // Update is called once per frame
-    void Update()
+	}
+	
+	// Update is called once per frame
+	void Update ()
     {
         if (state == State.Alive)
         {
@@ -109,7 +109,7 @@ public class Rocket : MonoBehaviour
     private void RespondToRotateInput()
     {
         rigidBody.freezeRotation = true; // take manual control of rotation
-
+       
         float rotationThisFrame = rcsThrust * Time.deltaTime;
         if (Input.GetKey(KeyCode.A))
         {
